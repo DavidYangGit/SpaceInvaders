@@ -9,15 +9,23 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    alien.cpp \
+    lives.cpp \
     main.cpp \
     mainwindow.cpp \
     collidable.cpp \
-    player.cpp
+    player.cpp \
+    projectile.cpp \
+    wall.cpp
 
 HEADERS += \
+    alien.h \
+    lives.h \
     mainwindow.h \
     collidable.h \
-    player.h
+    player.h \
+    projectile.h \
+    wall.h
 
 FORMS += \
     mainwindow.ui
