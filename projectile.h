@@ -6,8 +6,13 @@
 
 class Projectile : public Collidable
 {
+    Q_OBJECT
 public:
-    Projectile();
+    Projectile(QGraphicsItem *parent, int speed);
+
+    int getSpeed() const;
+
+    bool handleHit(QGraphicsItem *source) override;
 
     QRectF boundingRect() const override;
     QPainterPath shape() const override;

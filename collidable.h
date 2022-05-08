@@ -9,17 +9,14 @@ class Collidable : public QGraphicsItem
 public:
     Collidable(QGraphicsItem *parent) : QGraphicsItem(parent) {}
 
-    virtual ~Collidable() {}
+    virtual ~Collidable() {};
 
-    // Advance method is called each time the scene advances a frame
-    // This should be called by derived classes to check for collisions
-    void advance(int step) override;
+    // Call when object moves to detect collisions
+    virtual void detectCollision();
 
-    bool isFriendly() const;
-
-protected:
-    // Safety to make sure that fired bullets don't collide with self
-    bool friendly;
+    // Called by detect collision so object can handle it
+    // Returns true if handler results in deletion
+    virtual bool handleHit(QGraphicsItem *source);
 };
 
 #endif // COLLIDABLE_H

@@ -3,7 +3,8 @@
 
 #include "collidable.h"
 
-class Wall : public QObject, public Collidable{
+class Wall : public QObject, public Collidable
+{
     Q_OBJECT
 public:
     Wall(QGraphicsItem *parent);

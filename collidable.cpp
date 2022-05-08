@@ -1,32 +1,33 @@
 #include "collidable.h"
 
-void Collidable::advance(int step)
+void Collidable::detectCollision()
 {
-    Q_UNUSED(step);
-
     // Give inherited items a collision handler
     QList<QGraphicsItem *> collisions = collidingItems();
     for (QGraphicsItem *item : collisions)
     {
         // If the item is collidable, then we act upon it
         Collidable *collision = dynamic_cast<Collidable *>(item);
-        if (collision != nullptr && (friendly != collision->isFriendly()))
+        if (collision != nullptr)
         {
-            // Remove both items from the scene
-            scene()->removeItem(collision);
-            delete collision;
+            // Call the hit handler for each object
+            collision->handleHit(this);
 
-            scene()->removeItem(this);
-            delete this;
-
-            // We're deleting this object, so don't try to do anything
-            // This means this code doesn't work for collisions with > 2 items
-            return;
+            if (handleHit(collision)) {
+                // We're deleting this object, so don't try to do anything
+                // This means this code doesn't work for collisions with > 2 items
+                return;
+            }
         }
     }
 }
 
-bool Collidable::isFriendly() const
+bool Collidable::handleHit(QGraphicsItem *source)
 {
-    return friendly;
+    Q_UNUSED(source);
+
+    scene()->removeItem(this);
+    delete this;
+
+    return true;
 }

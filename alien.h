@@ -2,12 +2,14 @@
 #define ALIEN_H
 
 #include <QPainter>
+
 #include "collidable.h"
 
 class Alien : public Collidable
 {
+    Q_OBJECT
 public:
-    Alien();
+    Alien(QGraphicsItem *parent);
 
     QRectF boundingRect() const override;
     QPainterPath shape() const override;

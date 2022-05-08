@@ -6,8 +6,9 @@
 
 class Player : public Collidable
 {
+    Q_OBJECT
 public:
-    Player();
+    Player(QGraphicsItem *parent);
 
     QRectF boundingRect() const override;
     QPainterPath shape() const override;
