@@ -7,14 +7,14 @@
 
 class Alien : public Collidable
 {
-    Q_OBJECT
+//    Q_OBJECT
 public:
     Alien(QGraphicsItem *parent);
 
-    QRectF boundingRect() const override;
-    QPainterPath shape() const override;
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
-               QWidget *widget) override;
+//    QRectF boundingRect() const override;
+//    QPainterPath shape() const override;
+//    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
+//               QWidget *widget) override;
 
 protected:
     void advance(int step) override;

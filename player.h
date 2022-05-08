@@ -2,6 +2,7 @@
 #define PLAYER_H
 
 #include <QPainter>
+
 #include "collidable.h"
 
 class Player : public Collidable
@@ -14,6 +15,13 @@ public:
     QPainterPath shape() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
                QWidget *widget) override;
+
+    void keyPressEvent(QKeyEvent *event) override;
+
+    bool handleHit(QGraphicsItem *source) override;
+
+signals:
+    void died();
 
 protected:
     void advance(int step) override;
