@@ -10,10 +10,14 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    collidable.cpp \
+    player.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    collidable.h \
+    player.h
 
 FORMS += \
     mainwindow.ui
