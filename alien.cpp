@@ -1,5 +1,7 @@
 #include "alien.h"
 
+Alien::Alien() {}
+
 Alien::Alien(QGraphicsItem *parent) : Collidable(parent) {
     friendly = false;
 

@@ -7,6 +7,7 @@
 class Alien : public Collidable
 {
 public:
+    Alien();
     Alien(QGraphicsItem *parent);
 
     QRectF boundingRect() const override;

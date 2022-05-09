@@ -3,9 +3,9 @@
 #include <QApplication>
 #include <QGraphicsScene>
 #include <QGraphicsView>
-#include "player.cpp"
-#include "alien.cpp"
-#include "projectile.cpp"
+#include "player.h"
+#include "alien.h"
+#include "projectile.h"
 
 int main(int argc, char *argv[])
 {

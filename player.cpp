@@ -2,6 +2,8 @@
 #include "collidable.h"
 #include <QKeyEvent>
 
+Player::Player() {};
+
 Player::Player(QGraphicsItem *parent) : Collidable(parent) {
     friendly = true;
 

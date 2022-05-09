@@ -1,5 +1,7 @@
 #include "projectile.h"
 
+Projectile::Projectile() {}
+
 Projectile::Projectile(QGraphicsItem *parent) : Collidable(parent) {
     friendly = false;
 
