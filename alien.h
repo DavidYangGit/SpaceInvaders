@@ -16,10 +16,11 @@ enum class AlienType {
 
 class Alien : public Collidable
 {
-    Q_OBJECT
 public:
     Alien(AlienType type);
     Alien(QGraphicsItem *parent, AlienType type);
+
+    ~Alien();
 
     QRectF boundingRect() const override;
     QPainterPath shape() const override;
@@ -42,5 +43,9 @@ private:
     static bool movingRight;
     static std::vector<std::vector<Alien *>> *formation;
 };
+
+int Alien::formationPosition = 0;
+bool Alien::movingRight = true;
+std::vector<std::vector<Alien *>> *Alien::formation = new std::vector<std::vector<Alien *>>;
 
 #endif // ALIEN_H

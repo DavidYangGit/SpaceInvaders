@@ -7,8 +7,8 @@
 
 class Player : public Collidable
 {
-    Q_OBJECT
 public:
+    Player();
     Player(QGraphicsItem *parent);
 
     QRectF boundingRect() const override;
@@ -19,9 +19,6 @@ public:
     void keyPressEvent(QKeyEvent *event) override;
 
     bool handleHit(QGraphicsItem *source) override;
-
-signals:
-    void died();
 
 protected:
     void advance(int step) override;

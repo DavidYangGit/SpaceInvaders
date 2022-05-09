@@ -1,5 +1,9 @@
 #include "projectile.h"
 
+Projectile::Projectile(int speed) {
+    this->speed = speed;
+}
+
 Projectile::Projectile(QGraphicsItem *parent, int speed) : Collidable(parent) {
     this->speed = speed;
 }
@@ -31,4 +35,23 @@ void Projectile::advance(int step) {
         scene()->removeItem(this);
         delete this;
     }
+}
+
+QRectF Projectile::boundingRect() const {
+    qreal adjust = 0.5;
+    return QRectF(-18 - adjust, -22 - adjust, 36 + adjust, 60 + adjust);
+}
+
+void Projectile::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
+{
+    // Body
+    painter->setBrush(Qt::red);
+    painter->drawEllipse(-10, -20, 20, 40);
+}
+
+QPainterPath Projectile::shape() const
+{
+    QPainterPath path;
+    path.addRect(-10, -20, 20, 40);
+    return path;
 }

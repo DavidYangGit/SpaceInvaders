@@ -1,6 +1,8 @@
 #include "player.h"
-
+#include "collidable.h"
 #include <QKeyEvent>
+
+Player::Player() {}
 
 Player::Player(QGraphicsItem *parent) : Collidable(parent) {}
 
@@ -34,8 +36,26 @@ void Player::keyPressEvent(QKeyEvent *event)
 
 bool Player::handleHit(QGraphicsItem *source)
 {
-    emit died();
+    // TODO: emit something here
 
     return Collidable::handleHit(source);
 }
 
+QRectF Player::boundingRect() const {
+    qreal adjust = 0.5;
+    return QRectF(-18 - adjust, -22 - adjust, 36 + adjust, 60 + adjust);
+}
+
+void Player::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
+{
+    // Body
+    painter->setBrush(Qt::red);
+    painter->drawEllipse(-10, -20, 20, 40);
+}
+
+QPainterPath Player::shape() const
+{
+    QPainterPath path;
+    path.addRect(-10, -20, 20, 40);
+    return path;
+}
