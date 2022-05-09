@@ -14,12 +14,17 @@ void Player::keyPressEvent(QKeyEvent *event)
 {
     // TODO: set constants.
     // probably have a static/member var?
+    // TODO: do we also have to use advance for everything?
     switch(event->key()) {
     case Qt::Key_Left:
-        setPos(mapToParent(-10, 0));
+        if (x() > 0 + 30) {
+            setPos(mapToParent(-10, 0));
+        }
         break;
     case Qt::Key_Right:
-        setPos(mapToParent(10, 0));
+        if (x() < 400 - 30) {
+            setPos(mapToParent(10, 0));
+        }
     }
 
     // Check for collisions

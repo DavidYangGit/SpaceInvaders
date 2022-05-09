@@ -7,6 +7,7 @@
 class Collidable : public QGraphicsItem
 {
 public:
+    Collidable() {}
     Collidable(QGraphicsItem *parent) : QGraphicsItem(parent) {}
 
     virtual ~Collidable() {};
