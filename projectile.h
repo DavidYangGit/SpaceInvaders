@@ -7,7 +7,7 @@
 class Projectile : public Collidable
 {
 public:
-    Projectile();
+    Projectile(QGraphicsItem *parent);
 
     QRectF boundingRect() const override;
     QPainterPath shape() const override;

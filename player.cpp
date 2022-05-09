@@ -1,12 +1,14 @@
 #include "player.h"
+#include "collidable.h"
+#include <QKeyEvent>
 
 Player::Player(QGraphicsItem *parent) : Collidable(parent) {
     friendly = true;
 
     // Define hitbox
-    boundingRect();
+//    boundingRect();
     //paint();
-    shape();
+//    shape();
 }
 
 void Player::advance(int step) {
