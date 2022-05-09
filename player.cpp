@@ -4,7 +4,7 @@
 
 Player::Player() {};
 
-Player::Player(QGraphicsItem *parent) : Collidable(parent) {
+Player::Player(QGraphicsItem *parent) {
     friendly = true;
 
     // Define hitbox
@@ -29,9 +29,11 @@ QRectF Player::boundingRect() const {
 void Player::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     // Body
-    painter->setBrush(Qt::red);
-    painter->drawEllipse(-10, -20, 20, 40);
-    QPixmap oPIxMap(":/");;
+   // painter->QPixmap oPixMap(":/Resources/alien.png");
+   // painter->drawEllipse(-10, -20, 20, 40);
+    QPixmap oPixMap(":/Resources/alien.png");
+    setPixmap(oPixMap.scaled(QSize(100,100),Qt:: KeepAspectRatio));
+
 }
 
 QPainterPath Player::shape() const

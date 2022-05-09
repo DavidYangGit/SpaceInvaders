@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>svg_spaceships.png</file>
+        <file>laserRed06.png</file>
+        <file>laserRed07.png</file>
+        <file>alien.png</file>
+        <file>alien2.png</file>
+        <file>alien3.jpg</file>
+        <file>fig1.png</file>
+        <file>fig2.png</file>
+        <file>fig3.png</file>
+        <file>ship.png</file>
+    </qresource>
+</RCC>

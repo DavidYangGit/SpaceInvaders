@@ -7,7 +7,8 @@
 #include <QKeyEvent>
 #include <QGraphicsSimpleTextItem>
 
-class Player : public Collidable
+
+class Player : public  QGraphicsPixmapItem
 {
 public:
     Player();
@@ -27,12 +28,5 @@ private:
     QColor color;
 };
 
-class CPlayer : public QObject, public QGraphicsItem{
-    Q_OBJECT
-public :
-    CPlayer(QGraphicsItem* parent = nullptr);
-public slots:
-    void onMove();
-};
 
 #endif // PLAYER_H
