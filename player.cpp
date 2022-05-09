@@ -31,6 +31,7 @@ void Player::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget 
     // Body
     painter->setBrush(Qt::red);
     painter->drawEllipse(-10, -20, 20, 40);
+    QPixmap oPIxMap(":/");;
 }
 
 QPainterPath Player::shape() const
